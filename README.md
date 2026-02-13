@@ -9,15 +9,10 @@ To write a program to predict the profit of a city using the linear regression m
 
 ## Algorithm
 1. Initialize Parameters
-   <img width="435" height="150" alt="Screenshot 2026-02-13 141023" src="https://github.com/user-attachments/assets/dc8d96d7-bb22-4b24-bed6-ed49381e6005" />
-
 2.Compute Hypothesis
-For each training example, compute predicted profit:
-<img width="234" height="50" alt="Screenshot 2026-02-13 141034" src="https://github.com/user-attachments/assets/a311d82a-e535-459c-a8de-5e3517e583b4" />
-
+For each training example, compute predicted profit
 3.Update Parameters (Gradient Descent Rule) 
-4Predict Profit
-After training, use final theta1 and theta2 
+4Predict Profit:After training, use final theta1 and theta2 
 
 ## Program:
 ```
