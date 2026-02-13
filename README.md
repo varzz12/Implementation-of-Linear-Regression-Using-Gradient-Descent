@@ -8,8 +8,9 @@ To write a program to predict the profit of a city using the linear regression m
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. Initialize Parameters
-2.Compute Hypothesis
+1. Initialize Parameters:
+    theta1 and theta2
+2.Compute Hypothesis:
 For each training example, compute predicted profit
 3.Update Parameters (Gradient Descent Rule) 
 4Predict Profit:After training, use final theta1 and theta2 
