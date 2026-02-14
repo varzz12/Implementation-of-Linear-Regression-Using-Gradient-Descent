@@ -8,61 +8,83 @@ To write a program to predict the profit of a city using the linear regression m
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. Initialize Parameters:
-    theta1 and theta2
-2.Compute Hypothesis:
-For each training example, compute predicted profit
-3.Update Parameters (Gradient Descent Rule) 
-4Predict Profit:After training, use final theta1 and theta2 
-
+1.Import the required library and read the dataframe. 
+2.Write a function computeCost to generate the cost function. 
+3.Perform iterations og gradient steps with learning rate. 
+4.Plot the Cost function using Gradient Descent and generate the required graph
 ## Program:
 ```
-/*
 import numpy as np
 import matplotlib.pyplot as plt
 
-x=np.array([10,20,30,40,50],dtype=float)
-y=np.array([2,4,6,8,10],dtype=float)
-w=0.0
-b=0.0
-alpha=0.01
-epochs=100
-n=len(x)
+# -----------------------
+# Data
+# -----------------------
+x = np.array([1, 2, 3, 4, 5], dtype=float)
+y = np.array([2, 4, 6, 8, 10], dtype=float)
 
-losses=[]
+# -----------------------
+# Parameters
+# -----------------------
+w = 0.0
+b = 0.0
+alpha = 0.01
+epochs = 100
+n = len(x)
 
-for i in range(epochs):
-    y_hat=w*x+b
-    loss=np.mean((y_hat-y)**2)
+losses = []
+
+# -----------------------
+# Gradient Descent
+# -----------------------
+for _ in range(epochs):
+    y_hat = w * x + b
+
+    # Mean Squared Error
+    loss = np.mean((y_hat - y) ** 2)
     losses.append(loss)
-    
-    dw=(2/n)*np.sum((y_hat-y)*x)
-    db=(2/n)*np.sum(y_hat-y)
-    w-=alpha*dw
-    b-=alpha*db
-    
-plt.figure(figsize=(12,5))
-plt.subplot(1,2,2)
-plt.plot(losses,color="blue")
-plt.xlabel=("Population(hundred)")
-plt.ylabel=("Profit of a city(crore)")
-plt.title("Population Vs Profit of a city")
-    
+
+    dw = (2/n) * np.sum((y_hat - y) * x)
+    db = (2/n) * np.sum(y_hat - y)
+
+    w -= alpha * dw
+    b -= alpha * db
+
+# -----------------------
+# Plots
+# -----------------------
+plt.figure(figsize=(12, 5))
+
+# 1️⃣ Loss vs Iterations
+plt.subplot(1, 2, 1)
+plt.plot(losses, color="blue")
+plt.xlabel("Iterations")
+plt.ylabel("Loss (MSE)")
+plt.title("Loss vs Iterations")
+
+# 2️⃣ Regression Line
+plt.subplot(1, 2, 2)
+plt.scatter(x, y, color="red", label="Data")
+plt.plot(x, w * x + b, color="green", label="Regression Line")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Linear Regression Fit")
+plt.legend()
+
 plt.tight_layout()
 plt.show()
-    
-print("Final Weight(w):",w)
-print("Final bias(b):",b)
 
+print("Final weight (w):", w)
+print("Final bias (b):", b)
+
+/*
 Developed by: VARUNA. R
 RegisterNumber:25004445
 */
 ```
 
 ## Output:
-<img width="815" height="688" alt="Screenshot 2026-01-27 094236" src="https://github.com/user-attachments/assets/8926ca6d-9da5-4a91-a1c7-20f896f6bc43" />
-
-
+<img width="1334" height="565" alt="image" src="https://github.com/user-attachments/assets/92a679d9-1695-4a41-8b24-06889abf1313" />
 
 
 ## Result:
